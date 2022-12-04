@@ -1,0 +1,59 @@
+<!-- reactive form for user creation page -->
+
+<form [formGroup]="form" class="user_creation_form">
+
+  <h2>User Creation Page</h2>
+
+  <!-- fullname input field creation -->
+  <label>
+   Full Name
+  </label>
+  <input class="user_fullname_input" type="string" name="fullName"
+      formControlName="fullName">
+
+      <div class="alert" 
+      *ngIf="!form.controls.fullName.valid && form.get('fullName').touched">
+        Full Name atleast contain 3 characters, Only alphabates are allowed.
+      </div>
+  
+  <!-- username iniput field-->
+  <label for="username">
+    User Name
+  </label>
+  <input class="user_name_input" typr="string" name="username"
+  formControlName="userName">
+
+  <div class="alert" 
+  *ngIf="!form.controls.userName.valid && form.get('userName').touched">
+    User Name atleast contain 3 characters, Only alphanumerics are allowed.
+  </div>
+ 
+  <!-- emailid input field -->
+  <label for="email">
+    Email Id
+  </label>
+  <input class="user_email" type="string" name="email"
+  formControlName="email">
+
+  <div class="alert" 
+  *ngIf="!form.controls.email.valid && form.get('email').touched">
+   email is invalid!.
+  </div>
+
+  <!-- password input field -->
+  <label for="password">Password
+  </label>
+  <input class="user_password" type="string" name="password"
+  formControlName="password">
+
+  <strength-check barLabel="password Strength:"
+  [passwordToVerify]="form.value.password"
+  (passwordStrength)="passwordValid($event)"
+  >
+  </strength-check>
+
+  <button (click)="submit()" [disabled]="!form.valid">Create User</button>
+
+</form>
+
+<!-- <button (click)="check()">Check</button> -->

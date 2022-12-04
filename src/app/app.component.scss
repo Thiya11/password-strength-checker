@@ -1,0 +1,31 @@
+body{
+    height:100%;
+}
+
+.user_creation_form{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    margin-left: 20%;
+    margin-top: 5%;
+    font-size: 20px;
+    align-content: flex-start;
+}
+input{
+    width: 60%;
+    height: 30px;
+}
+button{
+    width:25%;
+    height:50px;
+    background-color: powderblue;
+    color:darkblue;
+    font-size: 20px;
+    align-self:left;
+}
+.alert{
+    font-size: 18px;
+    border: none;
+    background:lightcoral;
+    width:60%;
+}
